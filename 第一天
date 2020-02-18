@@ -1,0 +1,19 @@
+dir(sys)    返回列表；   模块文档调用格式：sys.version    查询内置属性；
+print()    打印
+def    定义，调用函数
+
+"""
+分割字符串或文本文件并交互的进行分页
+"""
+
+def more(text,numlines=15):
+    lines=text.splitlies()
+    while lines:
+        chunk=lines[:numlines]
+        lines=lines[numlines:]
+        for line in chunk:print(line)
+        if lines and input('more?') not in['y','Y']:break
+        
+if __name__=='__main__':
+    import sys
+    more(open(sys.argv[1]).read(),10)
